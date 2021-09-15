@@ -1,9 +1,6 @@
-import { APIGatewayProxyResult } from "aws-lambda";
 import { ApiResponse } from "../../types/api-response";
 
-export const errorLogger = (
-  response: ApiResponse
-): APIGatewayProxyResult | ApiResponse => {
+export const errorLogger = (response: ApiResponse): ApiResponse => {
   if (response.statusCode !== 200) {
     console.error(JSON.stringify(response));
   } else {
